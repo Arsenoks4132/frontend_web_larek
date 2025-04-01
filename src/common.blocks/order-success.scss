@@ -1,21 +1,48 @@
-@use "variables" as *;
-@use "mixins";
+@use 'variables' as *;
+@use 'mixins';
 
 .order-success {
-  @include mixins.flex(column);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
+	@include mixins.flex(column);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
 
-  &::before {
-    content: " ";
-    @include mixins.background('../images/Subtract.png');
-    width: 256px;
-    height: 256px;
-  }
+	&::before {
+		content: ' ';
+		@include mixins.background('../images/Subtract.png');
+		width: 256px;
+		height: 256px;
+	}
 
-  &__close {
-    margin-top: 2rem;
-  }
+	&__title {
+		margin: 0;
+		font-family: 'YS Text';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 60px;
+		line-height: 70px;
+		text-align: center;
+
+		color: #ffffff;
+	}
+
+	&__description {
+		margin: 0;
+
+		font-family: 'YS Text';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 28px;
+		line-height: 38px;
+		display: flex;
+		align-items: center;
+		text-align: center;
+
+		color: #ffffff;
+	}
+
+	&__close {
+		margin-top: 2rem;
+	}
 }
