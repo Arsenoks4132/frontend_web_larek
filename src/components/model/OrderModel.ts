@@ -7,6 +7,7 @@ import {
   Product,
 } from '../../types';
 import { Model } from '../core/Model';
+import { phone } from 'phone';
 
 export default class OrderModel extends Model<Record<string, unknown>> {
   private order: Order;
@@ -89,7 +90,7 @@ export default class OrderModel extends Model<Record<string, unknown>> {
   public validateContactsStep(): FormErrors<Order> {
     return {
       email: !this.order.email ? 'Введите email' : undefined,
-      phone: !this.order.phone ? 'Введите телефон' : undefined,
+      phone: !phone(this.order.phone, { country: "RU" }).isValid ? 'Введите телефон' : undefined,
     };
   }
 
